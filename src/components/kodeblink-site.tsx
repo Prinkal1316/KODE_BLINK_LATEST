@@ -15,6 +15,13 @@ import {
   Settings2,
   Globe,
   CheckCircle2,
+  Smartphone,
+  Users2,
+  CalendarCheck,
+  Receipt,
+  HelpCircle,
+  Building2,
+  ChevronDown,
 } from "lucide-react";
 import { z } from "zod";
 
@@ -28,6 +35,9 @@ import {
   services,
   site,
   solutions,
+  products,
+  faqs,
+  industries,
 } from "@/lib/site-config";
 
 // Image assets
@@ -178,7 +188,7 @@ export function Footer() {
 
         <div>
           <p className="font-mono text-xs uppercase tracking-[0.2em] font-semibold text-[#0878F9]">
-            Connect
+            Direct Contact
           </p>
           <div className="mt-5 grid gap-3 text-sm">
             <a
@@ -194,7 +204,7 @@ export function Footer() {
               {site.phone}
             </a>
             <p className="mt-2 text-xs text-[#5A6D82]/90 leading-relaxed">
-              Custom design and technology built around the way your manufacturing business works.
+              Custom design, web applications, mobile apps, and business software engineered around your specific operational workflows.
             </p>
           </div>
         </div>
@@ -204,7 +214,7 @@ export function Footer() {
         <div className="section-shell flex flex-col gap-3 py-6 text-xs text-[#5A6D82] sm:flex-row sm:items-center sm:justify-between">
           <span>© 2026 KODEBLINK. All rights reserved.</span>
           <span className="font-mono uppercase tracking-widest text-[11px] text-[#5A6D82]">
-            {site.tagline} · {site.specialization}
+            {site.tagline} · {site.positioning}
           </span>
         </div>
       </div>
@@ -271,8 +281,8 @@ export function SectionTitle({
 }
 
 export function CtaSection({
-  title = "Have an Idea? Let's Build It.",
-  text = "Tell us what you're trying to build and let's discuss how technology can help.",
+  title = "Have a Project in Mind? Let's Discuss How We Can Help.",
+  text = "Tell us what you are looking to build or improve, and our engineering team will provide practical guidance on scope, technology, and execution.",
 }: {
   title?: string;
   text?: string;
@@ -294,11 +304,11 @@ export function CtaSection({
         <div className="flex flex-wrap gap-3.5">
           <Button asChild variant="gradient" size="lg">
             <Link to="/contact">
-              Start a Project <ArrowRight className="h-4 w-4" />
+              Discuss Your Project <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
           <Button asChild variant="outline" size="lg">
-            <Link to="/contact">Contact Us</Link>
+            <Link to="/portfolio">Explore Our Products</Link>
           </Button>
         </div>
       </div>
@@ -306,41 +316,30 @@ export function CtaSection({
   );
 }
 
-/**
- * Hero Visual: An elegant, light-themed visual inspired by the multicolor K logo,
- * with technical grid lines, orbital curves, and engineering annotations.
- */
 export function HeroVisual() {
   return (
     <div className="relative mx-auto flex w-full max-w-lg items-center justify-center p-4 lg:max-w-none">
-      {/* Outer ambient glow */}
       <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-[#0878F9]/10 via-[#11C5E8]/10 to-[#20B85A]/10 blur-2xl" />
 
-      {/* Main framed composition */}
       <div className="tech-grid relative aspect-square w-full max-w-[460px] overflow-hidden rounded-2xl border border-[#DCE7F5] bg-white p-7 shadow-xl shadow-[#0878F9]/5">
-        {/* Orbital SVG background curves */}
         <svg
           viewBox="0 0 400 400"
           className="pointer-events-none absolute inset-0 h-full w-full"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Orbital circles */}
           <circle cx="200" cy="200" r="175" stroke="#DCE7F5" strokeWidth="1" strokeDasharray="4 4" />
           <circle cx="200" cy="200" r="135" stroke="#DCE7F5" strokeWidth="1" />
           <circle cx="200" cy="200" r="95" stroke="#0878F9" strokeWidth="1" strokeOpacity="0.15" />
 
-          {/* Coordinate axes */}
           <line x1="200" y1="20" x2="200" y2="380" stroke="#DCE7F5" strokeWidth="1" strokeDasharray="2 4" />
           <line x1="20" y1="200" x2="380" y2="200" stroke="#DCE7F5" strokeWidth="1" strokeDasharray="2 4" />
 
-          {/* Caliper ticks */}
           <circle cx="200" cy="25" r="2.5" fill="#0878F9" />
           <circle cx="375" cy="200" r="2.5" fill="#11C5E8" />
           <circle cx="200" cy="375" r="2.5" fill="#20B85A" />
           <circle cx="25" cy="200" r="2.5" fill="#FFC928" />
 
-          {/* Laser Guide Arc */}
           <path
             d="M 120 70 A 135 135 0 0 1 330 180"
             stroke="url(#hero-arc-gradient)"
@@ -350,71 +349,62 @@ export function HeroVisual() {
 
           <defs>
             <linearGradient id="hero-arc-gradient" x1="120" y1="70" x2="330" y2="180" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#0878F9" />
-              <stop offset="100%" stop-color="#11C5E8" />
+              <stop offset="0%" stopColor="#0878F9" />
+              <stop offset="100%" stopColor="#11C5E8" />
             </linearGradient>
             <linearGradient id="k-stem-grad" x1="120" y1="100" x2="120" y2="300" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#0878F9" />
-              <stop offset="100%" stop-color="#11C5E8" />
+              <stop offset="0%" stopColor="#0878F9" />
+              <stop offset="100%" stopColor="#11C5E8" />
             </linearGradient>
             <linearGradient id="k-wing-top" x1="180" y1="100" x2="290" y2="200" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#FFC928" />
-              <stop offset="100%" stop-color="#F04438" />
+              <stop offset="0%" stopColor="#FFC928" />
+              <stop offset="100%" stopColor="#F04438" />
             </linearGradient>
             <linearGradient id="k-wing-bot" x1="180" y1="200" x2="290" y2="300" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#12DCC0" />
-              <stop offset="100%" stop-color="#20B85A" />
+              <stop offset="0%" stopColor="#12DCC0" />
+              <stop offset="100%" stopColor="#20B85A" />
             </linearGradient>
           </defs>
 
-          {/* Central Multicolor K Mark (Clean, Precision Geometry) */}
-          {/* Vertical Stem */}
           <rect x="120" y="105" width="34" height="190" rx="17" fill="url(#k-stem-grad)" />
 
-          {/* Upper Diagonal Wing (Yellow to Red) */}
           <path
             d="M 166 182 L 254 94 C 262 86 278 92 278 104 V 108 C 278 116 274 124 266 130 L 192 196 Z"
             fill="url(#k-wing-top)"
           />
 
-          {/* Lower Diagonal Wing (Turquoise to Green) */}
           <path
             d="M 166 218 L 266 270 C 274 276 278 284 278 292 V 296 C 278 308 262 314 254 306 L 166 218 Z"
             fill="url(#k-wing-bot)"
           />
 
-          {/* Central Technology Node */}
           <circle cx="170" cy="200" r="16" fill="#0878F9" />
           <circle cx="170" cy="200" r="7" fill="#FFFFFF" />
         </svg>
 
-        {/* Small engineering-related annotations */}
         <div className="absolute top-4 left-5 rounded-md border border-[#DCE7F5] bg-white/90 px-2.5 py-1 text-[10px] font-mono font-medium text-[#5A6D82] shadow-xs backdrop-blur-xs">
-          COORD: [42.18°N, 71.05°W]
+          CUSTOM DESIGN & TECHNOLOGY
         </div>
 
         <div className="absolute top-4 right-5 flex items-center gap-1.5 rounded-md border border-[#DCE7F5] bg-white/90 px-2.5 py-1 text-[10px] font-mono text-[#0878F9] shadow-xs backdrop-blur-xs">
           <span className="h-2 w-2 rounded-full bg-[#20B85A]" />
-          PRECISION ACTIVE
+          ACTIVE READY
         </div>
 
         <div className="absolute bottom-4 left-5 rounded-md border border-[#DCE7F5] bg-white/90 px-3 py-1.5 text-[10px] font-mono text-[#0B132B] shadow-xs backdrop-blur-xs">
-          <span className="block text-[#5A6D82]">SYSTEM SPEC:</span>
-          <span className="font-semibold text-[#0878F9]">TOLERANCE ±0.002mm</span>
+          <span className="block text-[#5A6D82]">FULL STACK:</span>
+          <span className="font-semibold text-[#0878F9]">WEB · MOBILE · SOFTWARE</span>
         </div>
 
         <div className="absolute bottom-4 right-5 rounded-md border border-[#DCE7F5] bg-white/90 px-3 py-1.5 text-[10px] font-mono text-[#0B132B] shadow-xs backdrop-blur-xs text-right">
-          <span className="block text-[#5A6D82]">CORE:</span>
-          <span className="font-semibold text-[#20B85A]">MANUFACTURING OS</span>
+          <span className="block text-[#5A6D82]">BUSINESS:</span>
+          <span className="font-semibold text-[#20B85A]">SCALABLE SYSTEMS</span>
         </div>
       </div>
     </div>
   );
 }
 
-/**
- * Manufacturing visual in light-themed industrial style
- */
 export function ManufacturingVisual() {
   const [activeTab, setActiveTab] = useState<"floor" | "twin">("floor");
 
@@ -497,6 +487,8 @@ export function ManufacturingVisual() {
 }
 
 export function HomePage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
   return (
     <SiteFrame>
       <main>
@@ -511,32 +503,31 @@ export function HomePage() {
                   {site.positioning}
                 </span>
                 <span className="text-[#DCE7F5]">·</span>
-                <span className="font-mono text-xs text-[#5A6D82]">{site.specialization}</span>
+                <span className="font-mono text-xs text-[#5A6D82]">WEB · MOBILE · SOFTWARE</span>
               </div>
 
               {/* Large Headline with Blue-to-Cyan Gradient */}
               <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.08] tracking-tight text-[#0B132B] sm:text-5xl md:text-6xl">
-                Technology Built Around{" "}
+                Your Business Idea.{" "}
                 <span className="bg-gradient-to-r from-[#0878F9] via-[#0EA5E9] to-[#11C5E8] bg-clip-text text-transparent">
-                  Your Business.
+                  Our Technology.
                 </span>
               </h1>
 
               {/* Supporting Text */}
               <p className="mt-6 max-w-xl text-base leading-relaxed text-[#5A6D82] sm:text-lg">
-                We design and build custom websites, business applications and technology
-                solutions around the way your business works.
+                From websites and mobile apps to powerful business software, we turn your ideas into digital solutions built around your needs.
               </p>
 
               {/* Two CTA Buttons */}
               <div className="mt-8 flex flex-wrap gap-4">
                 <Button asChild variant="gradient" size="lg">
                   <Link to="/contact">
-                    Start a Project <ArrowRight className="h-4 w-4" />
+                    Discuss Your Project <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/solutions">Explore Solutions</Link>
+                  <Link to="/solutions">Explore Our Solutions</Link>
                 </Button>
               </div>
 
@@ -544,15 +535,15 @@ export function HomePage() {
               <div className="mt-10 grid grid-cols-1 gap-3 pt-6 border-t border-[#DCE7F5] sm:grid-cols-3">
                 <div className="flex items-center gap-2 text-xs font-medium text-[#0B132B]">
                   <CheckCircle2 className="h-4 w-4 text-[#0878F9] shrink-0" />
-                  <span>Custom Software</span>
+                  <span>Websites & Web Apps</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs font-medium text-[#0B132B]">
                   <CheckCircle2 className="h-4 w-4 text-[#11C5E8] shrink-0" />
-                  <span>Digital Experiences</span>
+                  <span>Mobile Applications</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs font-medium text-[#0B132B]">
                   <CheckCircle2 className="h-4 w-4 text-[#20B85A] shrink-0" />
-                  <span>Manufacturing Tech</span>
+                  <span>Custom Business Software</span>
                 </div>
               </div>
             </div>
@@ -564,18 +555,18 @@ export function HomePage() {
           </div>
         </section>
 
-        {/* Services Preview: 3 Refined Cards */}
+        {/* Development Services Overview */}
         <section className="py-20 bg-white">
           <div className="section-shell">
             <div className="max-w-2xl">
               <p className="font-mono text-xs uppercase tracking-[0.2em] font-semibold text-[#0878F9]">
-                Core Expertise
+                Our Services
               </p>
               <h2 className="mt-2 font-display text-3xl font-bold tracking-tight text-[#0B132B] md:text-4xl">
-                Focused Digital Capabilities
+                What We Build for Your Business
               </h2>
               <p className="mt-3 text-base text-[#5A6D82]">
-                Purpose-built technology services designed to make complex business and industrial work feel simpler.
+                Comprehensive digital development services covering web, mobile, and custom enterprise tools.
               </p>
             </div>
 
@@ -585,16 +576,16 @@ export function HomePage() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#0878F9]/10 text-[#0878F9] mb-6 transition-colors group-hover:bg-[#0878F9] group-hover:text-white">
                   <Cpu className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-[#0B132B]">Custom Software</h3>
+                <h3 className="text-xl font-bold text-[#0B132B]">Custom Business Software</h3>
                 <p className="mt-3 text-sm leading-relaxed text-[#5A6D82]">
-                  Purpose-built business platforms, internal operational tools, and tailored enterprise workflows engineered around your team's specific logic.
+                  Purpose-built business platforms, ERP, CRM, inventory trackers, and internal operational tools engineered specifically around your team's unique workflows.
                 </p>
                 <div className="mt-6 pt-4 border-t border-[#EDF3FA]">
                   <Link
                     to="/services"
                     className="inline-flex items-center gap-2 text-xs font-semibold text-[#0878F9] group-hover:text-[#0668dc]"
                   >
-                    Learn more <ChevronRight className="h-3.5 w-3.5" />
+                    View Software Services <ChevronRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
               </article>
@@ -604,35 +595,35 @@ export function HomePage() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#11C5E8]/15 text-[#0EA5E9] mb-6 transition-colors group-hover:bg-gradient-to-r group-hover:from-[#0878F9] group-hover:to-[#11C5E8] group-hover:text-white">
                   <Globe className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-[#0B132B]">Web & Digital Experiences</h3>
+                <h3 className="text-xl font-bold text-[#0B132B]">Web Design & Applications</h3>
                 <p className="mt-3 text-sm leading-relaxed text-[#5A6D82]">
-                  High-performance corporate web platforms, customer portals, and brand experiences with sharp typography, responsive engineering, and clear messaging.
+                  High-converting corporate websites, client dashboards, and interactive web applications with modern typography, fast load times, and accessible design.
                 </p>
                 <div className="mt-6 pt-4 border-t border-[#EDF3FA]">
                   <Link
                     to="/services"
                     className="inline-flex items-center gap-2 text-xs font-semibold text-[#0878F9] group-hover:text-[#0668dc]"
                   >
-                    Learn more <ChevronRight className="h-3.5 w-3.5" />
+                    View Web Capabilities <ChevronRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
               </article>
 
-              {/* Card 3: Manufacturing Technology */}
+              {/* Card 3: Mobile Applications */}
               <article className="group rounded-xl border border-[#DCE7F5] bg-white p-7 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-[#20B85A] hover:shadow-lg hover:shadow-[#20B85A]/10">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#20B85A]/10 text-[#20B85A] mb-6 transition-colors group-hover:bg-[#20B85A] group-hover:text-white">
-                  <Workflow className="h-6 w-6" />
+                  <Smartphone className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-[#0B132B]">Manufacturing Technology</h3>
+                <h3 className="text-xl font-bold text-[#0B132B]">Mobile Apps (Android Focused)</h3>
                 <p className="mt-3 text-sm leading-relaxed text-[#5A6D82]">
-                  Connected machine telemetry, shop floor dispatching, and lot-level inventory tracking tailored to modern manufacturing operations and production lines.
+                  Intuitive mobile applications for tablets and handheld devices, empowering field staff, warehouse workers, and on-the-go teams with real-time tools.
                 </p>
                 <div className="mt-6 pt-4 border-t border-[#EDF3FA]">
                   <Link
-                    to="/solutions"
+                    to="/services"
                     className="inline-flex items-center gap-2 text-xs font-semibold text-[#20B85A] group-hover:text-[#189b4a]"
                   >
-                    Learn more <ChevronRight className="h-3.5 w-3.5" />
+                    View Mobile Services <ChevronRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
               </article>
@@ -640,48 +631,191 @@ export function HomePage() {
           </div>
         </section>
 
-        {/* Manufacturing Section: Pale Blue Background & Two-Column Layout */}
-        <section className="bg-[#F5F9FF] border-y border-[#DCE7F5] py-20 md:py-28">
+        {/* Prominent Software Products Section */}
+        <section className="bg-[#F5F9FF] border-y border-[#DCE7F5] py-20 md:py-24">
+          <div className="section-shell">
+            <div className="max-w-2xl">
+              <p className="font-mono text-xs uppercase tracking-[0.2em] font-semibold text-[#0878F9]">
+                Software Products
+              </p>
+              <h2 className="mt-2 font-display text-3xl font-bold tracking-tight text-[#0B132B] md:text-4xl">
+                Ready-To-Deploy Product Solutions
+              </h2>
+              <p className="mt-3 text-base text-[#5A6D82]">
+                Explore our focused business applications designed to solve real operational bottlenecks.
+              </p>
+            </div>
+
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {/* Product 1: SmartReceipt */}
+              <article className="rounded-xl border border-[#DCE7F5] bg-white p-7 shadow-xs flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between pb-4 border-b border-[#EDF3FA]">
+                    <div className="flex items-center gap-2 text-[#0878F9]">
+                      <Receipt className="h-5 w-5" />
+                      <span className="font-mono text-xs font-semibold uppercase">Product Direction</span>
+                    </div>
+                    <span className="text-xs text-[#5A6D82] font-mono">01</span>
+                  </div>
+
+                  <h3 className="mt-5 text-xl font-bold text-[#0B132B]">SmartReceipt</h3>
+                  <p className="mt-1 text-xs font-medium text-[#0878F9]">
+                    Digital Receipt & Document Management
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-[#5A6D82]">
+                    A digital receipt management solution designed to capture, organize, and access receipt records and supplier documentation without paper clutter.
+                  </p>
+
+                  <ul className="mt-5 space-y-2 text-xs text-[#5A6D82]">
+                    <li className="flex items-center gap-2">
+                      <Check className="h-3.5 w-3.5 text-[#20B85A]" /> Digital capture & organized storage
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-3.5 w-3.5 text-[#20B85A]" /> Project & supplier categorization
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-3.5 w-3.5 text-[#20B85A]" /> Fast search and export-ready records
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="mt-8 pt-4 border-t border-[#EDF3FA]">
+                  <Link
+                    to="/smart-receipt"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#0878F9] hover:text-[#0668dc]"
+                  >
+                    Explore SmartReceipt <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
+              </article>
+
+              {/* Product 2: Payroll Management */}
+              <article className="rounded-xl border border-[#DCE7F5] bg-white p-7 shadow-xs flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between pb-4 border-b border-[#EDF3FA]">
+                    <div className="flex items-center gap-2 text-[#0EA5E9]">
+                      <Users2 className="h-5 w-5" />
+                      <span className="font-mono text-xs font-semibold uppercase">Business Application</span>
+                    </div>
+                    <span className="text-xs text-[#5A6D82] font-mono">02</span>
+                  </div>
+
+                  <h3 className="mt-5 text-xl font-bold text-[#0B132B]">Payroll Management Application</h3>
+                  <p className="mt-1 text-xs font-medium text-[#0EA5E9]">
+                    Salary & Attendance Workflows
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-[#5A6D82]">
+                    A dedicated business application focused on payroll-related workflows, salary calculations, employee deductions, and attendance verification.
+                  </p>
+
+                  <ul className="mt-5 space-y-2 text-xs text-[#5A6D82]">
+                    <li className="flex items-center gap-2">
+                      <Check className="h-3.5 w-3.5 text-[#20B85A]" /> Wage & salary structure configuration
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-3.5 w-3.5 text-[#20B85A]" /> Attendance & leave reconciliation
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-3.5 w-3.5 text-[#20B85A]" /> Monthly salary slip generation
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="mt-8 pt-4 border-t border-[#EDF3FA]">
+                  <Link
+                    to="/portfolio"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#0878F9] hover:text-[#0668dc]"
+                  >
+                    View Application Details <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
+              </article>
+
+              {/* Product 3: Daily Task Tracker */}
+              <article className="rounded-xl border border-[#DCE7F5] bg-white p-7 shadow-xs flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between pb-4 border-b border-[#EDF3FA]">
+                    <div className="flex items-center gap-2 text-[#20B85A]">
+                      <CalendarCheck className="h-5 w-5" />
+                      <span className="font-mono text-xs font-semibold uppercase">Productivity Tool</span>
+                    </div>
+                    <span className="text-xs text-[#5A6D82] font-mono">03</span>
+                  </div>
+
+                  <h3 className="mt-5 text-xl font-bold text-[#0B132B]">Daily Task Tracker</h3>
+                  <p className="mt-1 text-xs font-medium text-[#20B85A]">
+                    Task Status & Team Visibility
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-[#5A6D82]">
+                    An intuitive application designed to organize daily tasks, monitor status in real time, prioritize critical work, and provide clear team visibility.
+                  </p>
+
+                  <ul className="mt-5 space-y-2 text-xs text-[#5A6D82]">
+                    <li className="flex items-center gap-2">
+                      <Check className="h-3.5 w-3.5 text-[#20B85A]" /> Task assignment and priority boards
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-3.5 w-3.5 text-[#20B85A]" /> Real-time status: To Do, Doing, Done
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-3.5 w-3.5 text-[#20B85A]" /> Distraction-free team coordination
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="mt-8 pt-4 border-t border-[#EDF3FA]">
+                  <Link
+                    to="/portfolio"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#20B85A] hover:text-[#189b4a]"
+                  >
+                    View Tracker Details <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        {/* Manufacturing & Custom Systems Section */}
+        <section className="py-20 md:py-28 bg-white border-b border-[#DCE7F5]">
           <div className="section-shell grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-20">
             <div>
               <SectionTitle
-                eyebrow="Specialized Domain"
+                eyebrow="Custom Business Systems"
                 title="Technology for Modern Manufacturing."
-                text="Connect production, inventory, dispatch and business operations through custom technology designed around your workflow."
+                text="Connect production, inventory, dispatch and business operations through custom software designed around your actual workflow."
               />
               <p className="mt-5 text-sm leading-relaxed text-[#5A6D82]">
-                Manufacturing businesses require software that understands high-tempo shop floors,
-                machine interfaces, and lot-level traceability. We bridge the gap between machine operations
-                and executive management through reliable, intuitive digital systems.
+                Manufacturing businesses and operational teams require software that eliminates manual paper sheets, connects shop floor machines, and provides real-time visibility. We bridge shop floor operations and executive decision-making with practical digital tools.
               </p>
 
               <div className="mt-8 space-y-3.5">
-                <div className="flex items-start gap-3 rounded-lg border border-[#DCE7F5] bg-white p-4 shadow-xs">
+                <div className="flex items-start gap-3 rounded-lg border border-[#DCE7F5] bg-[#F5F9FF] p-4 shadow-xs">
                   <Gauge className="h-5 w-5 text-[#0878F9] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-semibold text-[#0B132B]">Operational Telemetry</h4>
+                    <h4 className="text-sm font-semibold text-[#0B132B]">Operational Telemetry & Monitoring</h4>
                     <p className="mt-1 text-xs text-[#5A6D82]">
-                      Actionable visibility across machine cycles, assembly bays, and line status.
+                      Actionable visibility across machine throughput, station availability, and shift cycle times.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 rounded-lg border border-[#DCE7F5] bg-white p-4 shadow-xs">
+                <div className="flex items-start gap-3 rounded-lg border border-[#DCE7F5] bg-[#F5F9FF] p-4 shadow-xs">
                   <Boxes className="h-5 w-5 text-[#11C5E8] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-semibold text-[#0B132B]">Inventory & Material Tracking</h4>
+                    <h4 className="text-sm font-semibold text-[#0B132B]">Inventory & Material Traceability</h4>
                     <p className="mt-1 text-xs text-[#5A6D82]">
-                      Lot-level tracking from raw supplier intake to finished dispatch.
+                      Lot-level tracking from raw material intake through bay assembly and finished delivery.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 rounded-lg border border-[#DCE7F5] bg-white p-4 shadow-xs">
+                <div className="flex items-start gap-3 rounded-lg border border-[#DCE7F5] bg-[#F5F9FF] p-4 shadow-xs">
                   <Workflow className="h-5 w-5 text-[#20B85A] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-sm font-semibold text-[#0B132B]">Workflow & Dispatch Automation</h4>
                     <p className="mt-1 text-xs text-[#5A6D82]">
-                      Balance shift work orders against station tooling and worker availability.
+                      Balance shift work orders against worker capacity, tooling availability, and client delivery deadlines.
                     </p>
                   </div>
                 </div>
@@ -702,78 +836,46 @@ export function HomePage() {
           </div>
         </section>
 
-        {/* Product Spotlight: KodeBlink SmartReceipt */}
-        <section className="py-20 md:py-24 border-b border-[#DCE7F5] bg-white">
-          <div className="section-shell grid gap-10 lg:grid-cols-[1.3fr_0.9fr] lg:items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#DCE7F5] bg-[#F5F9FF] px-3 py-1">
-                <span className="font-mono text-xs uppercase tracking-[0.16em] font-semibold text-[#0878F9]">
-                  Product Direction
-                </span>
-              </div>
-              <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-[#0B132B] md:text-5xl">
-                Meet KodeBlink SmartReceipt.
-              </h2>
-              <p className="mt-5 max-w-xl text-base leading-relaxed text-[#5A6D82] md:text-lg">
-                A clean product direction for managing digital receipt information, material verification,
-                and dockside purchase documentation. Product details are being finalized.
+        {/* Industries & Business Use Cases Supported */}
+        <section className="bg-[#F5F9FF] py-20 md:py-24 border-b border-[#DCE7F5]">
+          <div className="section-shell">
+            <div className="max-w-2xl">
+              <p className="font-mono text-xs uppercase tracking-[0.2em] font-semibold text-[#0878F9]">
+                Who We Serve
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Button asChild variant="gradient" size="lg">
-                  <Link to="/smart-receipt">
-                    Explore SmartReceipt <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link to="/contact">Discuss Pilot Requirements</Link>
-                </Button>
-              </div>
+              <h2 className="mt-2 font-display text-3xl font-bold tracking-tight text-[#0B132B] md:text-4xl">
+                Industries & Business Use Cases
+              </h2>
+              <p className="mt-3 text-base text-[#5A6D82]">
+                We partner with diverse businesses to solve complex operational challenges with tailored technology.
+              </p>
             </div>
 
-            <div className="rounded-xl border border-[#DCE7F5] bg-[#F5F9FF] p-5 shadow-lg shadow-[#0878F9]/5">
-              <div className="flex items-center justify-between border-b border-[#DCE7F5] pb-3">
-                <span className="font-mono text-xs font-semibold uppercase text-[#0878F9]">
-                  SmartReceipt / Dock Interface
-                </span>
-                <span className="font-mono text-[10px] text-[#5A6D82]">Preview Direction</span>
-              </div>
-              <div className="mt-4 space-y-3">
-                {["Supplier Bill of Lading", "Purchase Order Cross-Match", "Material Lot Verification"].map(
-                  (item, index) => (
-                    <div
-                      key={item}
-                      className="flex items-center justify-between rounded-lg border border-[#DCE7F5] bg-white p-3.5 shadow-2xs"
-                    >
-                      <div>
-                        <p className="font-mono text-[10px] uppercase text-[#5A6D82]">{item}</p>
-                        <span className="mt-1.5 block h-1.5 w-24 rounded-full bg-gradient-to-r from-[#0878F9] to-[#11C5E8]" />
-                      </div>
-                      <span className="font-mono text-xs font-semibold text-[#0878F9]">0{index + 1} Verified</span>
-                    </div>
-                  )
-                )}
-              </div>
-              <div className="mt-4 flex items-center justify-between border-t border-[#DCE7F5] pt-3 text-xs font-mono text-[#5A6D82]">
-                <span>Dockside Reconciliation</span>
-                <span className="font-semibold text-[#20B85A]">v1.0 In Progress</span>
-              </div>
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {industries.map((ind) => (
+                <div key={ind.title} className="rounded-xl border border-[#DCE7F5] bg-white p-6 shadow-2xs">
+                  <Building2 className="h-6 w-6 text-[#0878F9] mb-4" />
+                  <h3 className="text-base font-bold text-[#0B132B]">{ind.title}</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-[#5A6D82]">{ind.description}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Development Process Section */}
-        <section className="bg-[#F5F9FF] py-20 md:py-24 border-b border-[#DCE7F5]">
+        <section className="py-20 md:py-24 bg-white border-b border-[#DCE7F5]">
           <div className="section-shell">
             <SectionTitle
-              eyebrow="Methodology"
+              eyebrow="Our Methodology"
               title="Simple Process. Clear Results."
-              text="From understanding initial business requirements to deploying validated solutions, we follow a clear, structured path."
+              text="From initial discovery to validated rollout, our five-step process ensures transparency, speed, and precision."
             />
             <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
               {processSteps.map((step) => (
                 <div
                   key={step.number}
-                  className="rounded-xl border border-[#DCE7F5] bg-white p-6 shadow-2xs transition-all hover:-translate-y-1 hover:border-[#0878F9]"
+                  className="rounded-xl border border-[#DCE7F5] bg-[#F5F9FF] p-6 shadow-2xs transition-all hover:-translate-y-1 hover:border-[#0878F9]"
                 >
                   <span className="font-mono text-2xl font-bold text-[#0878F9] tabular-nums">
                     {step.number}
@@ -787,43 +889,90 @@ export function HomePage() {
         </section>
 
         {/* Why KODEBLINK */}
-        <section className="py-20 md:py-24 bg-white">
+        <section className="py-20 md:py-24 bg-[#F5F9FF] border-b border-[#DCE7F5]">
           <div className="section-shell">
             <SectionTitle
-              eyebrow="Our Approach"
-              title="Why KODEBLINK"
-              text="A practical approach to building technology that people can use."
+              eyebrow="The KODEBLINK Advantage"
+              title="Why Businesses Partner With KODEBLINK"
+              text="A pragmatic approach to technology that prioritizes business utility and user adoption."
             />
             <div className="mt-12 grid gap-8 md:grid-cols-3">
-              <div className="rounded-xl border border-[#DCE7F5] bg-[#F5F9FF] p-7 transition-colors hover:border-[#0878F9]">
+              <div className="rounded-xl border border-[#DCE7F5] bg-white p-7 shadow-xs">
                 <Cpu className="h-6 w-6 text-[#0878F9]" />
                 <h3 className="mt-4 text-lg font-bold text-[#0B132B]">
-                  Built Around Your Business
+                  Built Around Your Real Workflows
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-[#5A6D82]">
-                  Technology should adapt to the business, not force your team to fit a rigid off-the-shelf software model.
+                  We do not force rigid off-the-shelf software onto your operations. We engineer tools that adapt to your exact business logic.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-[#DCE7F5] bg-[#F5F9FF] p-7 transition-colors hover:border-[#11C5E8]">
+              <div className="rounded-xl border border-[#DCE7F5] bg-white p-7 shadow-xs">
                 <Layers className="h-6 w-6 text-[#11C5E8]" />
                 <h3 className="mt-4 text-lg font-bold text-[#0B132B]">
-                  Simple User Experience
+                  Simple, Distraction-Free UX
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-[#5A6D82]">
-                  We focus on high-contrast interfaces that are easy to understand and use on busy manufacturing floors.
+                  Your team does not have time to wade through cluttered menus. Our interfaces focus on high contrast, rapid entry, and clarity.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-[#DCE7F5] bg-[#F5F9FF] p-7 transition-colors hover:border-[#20B85A]">
+              <div className="rounded-xl border border-[#DCE7F5] bg-white p-7 shadow-xs">
                 <ShieldCheck className="h-6 w-6 text-[#20B85A]" />
                 <h3 className="mt-4 text-lg font-bold text-[#0B132B]">
-                  Practical Technology
+                  Engineering Quality & Scalability
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-[#5A6D82]">
-                  We choose modern, resilient technology based on the actual business requirement, ensuring long-term maintainability.
+                  Clean architecture, strong type safety, and ongoing software support so your technology scales alongside your business growth.
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Frequently Asked Questions */}
+        <section className="py-20 md:py-24 bg-white">
+          <div className="section-shell max-w-4xl mx-auto">
+            <div className="text-center max-w-xl mx-auto mb-12">
+              <p className="font-mono text-xs uppercase tracking-[0.2em] font-semibold text-[#0878F9]">
+                Questions & Answers
+              </p>
+              <h2 className="mt-2 font-display text-3xl font-bold tracking-tight text-[#0B132B] md:text-4xl">
+                Frequently Asked Questions
+              </h2>
+              <p className="mt-3 text-sm text-[#5A6D82]">
+                Everything you need to know about partnering with KODEBLINK on your technology project.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {faqs.map((faq, idx) => {
+                const isOpen = openFaq === idx;
+                return (
+                  <div
+                    key={faq.question}
+                    className="rounded-xl border border-[#DCE7F5] bg-[#F5F9FF] overflow-hidden transition-colors"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setOpenFaq(isOpen ? null : idx)}
+                      className="w-full flex items-center justify-between p-5 text-left font-semibold text-[#0B132B] hover:text-[#0878F9] transition-colors"
+                    >
+                      <span>{faq.question}</span>
+                      <ChevronDown
+                        className={`h-4 w-4 text-[#5A6D82] transition-transform duration-200 ${
+                          isOpen ? "rotate-180 text-[#0878F9]" : ""
+                        }`}
+                      />
+                    </button>
+                    {isOpen && (
+                      <div className="px-5 pb-5 pt-1 text-sm leading-relaxed text-[#5A6D82] border-t border-[#EDF3FA]">
+                        {faq.answer}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -840,19 +989,19 @@ export function AboutPage() {
       <main>
         <PageIntro
           eyebrow="About KODEBLINK"
-          title="Technology should make complex work feel simpler."
-          text="KODEBLINK combines design, engineering and business understanding to create practical digital solutions."
+          title="Custom design and technology built around how your business works."
+          text="KODEBLINK combines design craftsmanship, software engineering, and business understanding to deliver websites, web apps, mobile solutions, and custom business software."
         />
 
         <section className="section-shell grid gap-14 py-20 md:py-24 lg:grid-cols-2 lg:gap-20">
           <div>
             <SectionTitle
-              eyebrow="Overview"
-              title="Who We Are"
-              text="KODEBLINK is a custom design and technology company. We build websites, business applications and systems around the way organizations work."
+              eyebrow="Who We Are"
+              title="A Dedicated Custom Technology Partner"
+              text="KODEBLINK is a Custom Design & Technology Company. We partner with business owners, operational leaders, and growing companies to develop tailored digital solutions."
             />
             <p className="mt-5 text-sm leading-relaxed text-[#5A6D82]">
-              Specializing in manufacturing technology, we partner with businesses to eliminate operational blind spots, replace manual paper processes, and engineer software that works reliably day in and day out.
+              Instead of forcing rigid off-the-shelf software templates onto unique business workflows, we architect software that fits your exact processes, data structures, and team requirements. From responsive corporate websites to multi-department ERP and mobile tools, our focus is practical utility and measurable return.
             </p>
           </div>
 
@@ -860,13 +1009,13 @@ export function AboutPage() {
             <div className="rounded-xl border border-[#DCE7F5] bg-[#F5F9FF] p-7">
               <h3 className="text-lg font-bold text-[#0B132B]">What We Believe</h3>
               <p className="mt-3 text-sm leading-relaxed text-[#5A6D82]">
-                Good technology is clear, useful and connected to a real business need.
+                Good technology should make complex work feel simpler. If a digital tool creates friction or confusion, it fails its purpose. We build software that users adopt effortlessly.
               </p>
             </div>
             <div className="rounded-xl border border-[#DCE7F5] bg-[#F5F9FF] p-7">
-              <h3 className="text-lg font-bold text-[#0B132B]">Our Approach</h3>
+              <h3 className="text-lg font-bold text-[#0B132B]">Our Engineering Approach</h3>
               <p className="mt-3 text-sm leading-relaxed text-[#5A6D82]">
-                We start with understanding, then design and build only what helps move the work forward.
+                We begin with deep operational discovery, outline clear scope and data flows, craft clean user interfaces, and develop robust, type-safe software that performs reliably under real workloads.
               </p>
             </div>
           </div>
@@ -881,7 +1030,7 @@ export function AboutPage() {
               </span>
               <h2 className="mt-3 font-display text-2xl font-bold text-[#0B132B]">Our Vision</h2>
               <p className="mt-4 text-sm leading-relaxed text-[#5A6D82]">
-                To become a trusted technology partner for organizations by creating digital products and business systems that make complex operations simpler, smarter and more connected.
+                To become a trusted technology partner for growing businesses and manufacturing organizations by creating digital products and business systems that make operations simpler, smarter, and seamlessly connected.
               </p>
             </div>
 
@@ -891,7 +1040,7 @@ export function AboutPage() {
               </span>
               <h2 className="mt-3 font-display text-2xl font-bold text-[#0B132B]">Our Mission</h2>
               <p className="mt-4 text-sm leading-relaxed text-[#5A6D82]">
-                To combine design, engineering and business understanding to build practical, scalable and meaningful digital solutions for organizations across industries.
+                To combine design precision, engineering rigor, and operational insight to build practical, scalable, and meaningful digital solutions that solve real business bottlenecks.
               </p>
             </div>
           </div>
@@ -899,14 +1048,17 @@ export function AboutPage() {
 
         {/* Core Values */}
         <section className="section-shell py-20 md:py-24">
-          <SectionTitle title="Core Values" text="The principles that guide every interaction and code commit." />
+          <SectionTitle
+            title="Our Core Values"
+            text="The foundational standards that guide every software design and client relationship."
+          />
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {[
               "Customer First",
-              "Quality",
-              "Transparency",
-              "Ownership",
-              "Continuous Improvement",
+              "Engineering Quality",
+              "Transparent Pricing",
+              "Accountability",
+              "Continuous Support",
             ].map((value) => (
               <div key={value} className="rounded-xl border border-[#DCE7F5] bg-white p-6 shadow-2xs hover:border-[#0878F9]">
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0878F9]/10 text-[#0878F9] mb-4">
@@ -929,9 +1081,9 @@ export function ServicesPage() {
     <SiteFrame>
       <main>
         <PageIntro
-          eyebrow="Services"
-          title="The right level of technology for the work ahead."
-          text="Choose a focused service or combine the pieces into a system designed around your business."
+          eyebrow="Our Services"
+          title="Full-Stack Custom Development Services"
+          text="From high-converting corporate websites and web apps to mobile solutions and custom ERP/CRM software, we engineer technology around your business."
         />
 
         <section className="section-shell py-20 md:py-24">
@@ -943,8 +1095,8 @@ export function ServicesPage() {
               >
                 <div>
                   <div className="flex items-center justify-between pb-4 border-b border-[#EDF3FA]">
-                    <span className="font-mono text-xs font-semibold text-[#0878F9]">0{index + 1}</span>
-                    <span className="font-mono text-[10px] uppercase text-[#5A6D82]">Service</span>
+                    <span className="font-mono text-xs font-semibold text-[#0878F9]">SERVICE 0{index + 1}</span>
+                    <span className="font-mono text-[10px] uppercase text-[#5A6D82]">KODEBLINK</span>
                   </div>
 
                   <h2 className="mt-5 text-xl font-bold text-[#0B132B]">{title}</h2>
@@ -988,9 +1140,9 @@ export function SolutionsPage() {
     <SiteFrame>
       <main>
         <PageIntro
-          eyebrow="Solutions"
+          eyebrow="Custom Solutions"
           title="Business outcomes first. Technology second."
-          text="We help organizations connect important work without adding unnecessary complexity."
+          text="We help companies eliminate manual friction, connect operations, and replace fragmented spreadsheets with reliable custom software."
         />
 
         <section className="section-shell py-20 md:py-24">
@@ -1002,8 +1154,8 @@ export function SolutionsPage() {
               >
                 <div>
                   <div className="flex items-center justify-between pb-4 border-b border-[#EDF3FA]">
-                    <span className="font-mono text-xs font-semibold text-[#0878F9]">OUTCOME 0{index + 1}</span>
-                    <span className="font-mono text-[10px] uppercase text-[#5A6D82]">Solution</span>
+                    <span className="font-mono text-xs font-semibold text-[#0878F9]">WORKFLOW 0{index + 1}</span>
+                    <span className="font-mono text-[10px] uppercase text-[#5A6D82]">Custom Solution</span>
                   </div>
 
                   <h2 className="mt-5 text-2xl font-bold text-[#0B132B]">{title}</h2>
@@ -1011,21 +1163,21 @@ export function SolutionsPage() {
                   <div className="mt-6 space-y-4">
                     <div className="rounded-lg border border-[#EDF3FA] bg-[#F5F9FF] p-4">
                       <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#5A6D82]">
-                        Problem
+                        Operational Challenge
                       </p>
                       <p className="mt-1 text-sm leading-relaxed text-[#5A6D82]">{problem}</p>
                     </div>
 
                     <div className="rounded-lg border border-[#EDF3FA] bg-[#F5F9FF] p-4">
                       <p className="font-mono text-[10px] uppercase tracking-[0.16em] font-semibold text-[#0878F9]">
-                        Solution
+                        KODEBLINK Custom Software
                       </p>
                       <p className="mt-1 text-sm leading-relaxed text-[#0B132B]">{solution}</p>
                     </div>
 
                     <div className="rounded-lg border border-[#EDF3FA] bg-[#F5F9FF] p-4">
                       <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#5A6D82]">
-                        Benefit
+                        Measurable Business Value
                       </p>
                       <p className="mt-1 text-sm leading-relaxed text-[#5A6D82]">{benefit}</p>
                     </div>
@@ -1046,8 +1198,8 @@ export function SolutionsPage() {
         </section>
 
         <CtaSection
-          title="Let's solve the right problem."
-          text="Share the workflow you want to improve."
+          title="Let's solve the right operational problem."
+          text="Share the exact workflow, paper bottleneck, or system handoff you want to modernize."
         />
       </main>
     </SiteFrame>
@@ -1059,19 +1211,19 @@ export function SmartReceiptPage() {
     <SiteFrame>
       <main>
         <PageIntro
-          eyebrow="Product"
+          eyebrow="Software Product"
           title="KodeBlink SmartReceipt"
-          text="A dedicated product direction for a simpler way to manage receipt information."
+          text="A digital receipt management solution designed to capture, organize, and access receipt records and supplier documentation without paper clutter."
         />
 
         <section className="section-shell grid gap-14 py-20 md:py-24 lg:grid-cols-2 lg:items-center lg:gap-20">
           <div>
             <SectionTitle
               title="What is SmartReceipt?"
-              text="SmartReceipt is a KODEBLINK product concept focused on making receipt information easier to organize and access. Exact product details are being finalized."
+              text="SmartReceipt is a KODEBLINK product focused on making receipt records, purchase documentation, and supplier packing slips straightforward to organize and retrieve."
             />
             <p className="mt-4 text-sm leading-relaxed text-[#5A6D82]">
-              Specifically tailored for dockside manufacturing receiving, supplier packing slip validation, and instant ledger reconciliation.
+              Specifically designed for business receiving docks, procurement departments, and office managers, SmartReceipt transforms loose paper receipts and scattered photo uploads into an organized digital ledger that simplifies bookkeeping and inventory cross-matching.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button asChild variant="gradient" size="lg">
@@ -1080,7 +1232,7 @@ export function SmartReceiptPage() {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link to="/solutions">Explore Solutions</Link>
+                <Link to="/portfolio">Explore All Products</Link>
               </Button>
             </div>
           </div>
@@ -1088,26 +1240,30 @@ export function SmartReceiptPage() {
           <div className="rounded-xl border border-[#DCE7F5] bg-[#F5F9FF] p-5 shadow-lg shadow-[#0878F9]/5">
             <div className="flex items-center justify-between border-b border-[#DCE7F5] pb-3">
               <span className="font-mono text-xs font-semibold uppercase text-[#0878F9]">
-                SmartReceipt / Demo
+                SmartReceipt / Interface
               </span>
-              <span className="font-mono text-[10px] text-[#5A6D82]">Placeholder</span>
+              <span className="font-mono text-[10px] text-[#5A6D82]">Product Overview</span>
             </div>
             <div className="mt-4 space-y-3">
-              {["Receipt record", "Business category", "Transaction detail"].map((item, index) => (
+              {[
+                "Supplier Bill of Lading & Receipt Intake",
+                "Purchase Order Cross-Match Verification",
+                "Vendor & Category Expense Tagging",
+              ].map((item, index) => (
                 <div
                   key={item}
                   className="flex items-center justify-between rounded-lg border border-[#DCE7F5] bg-white p-4 shadow-2xs"
                 >
                   <div>
                     <p className="font-mono text-[9px] uppercase text-[#5A6D82]">{item}</p>
-                    <span className="mt-2 block h-2 w-24 rounded-full bg-gradient-to-r from-[#0878F9] to-[#11C5E8]" />
+                    <span className="mt-2 block h-1.5 w-24 rounded-full bg-gradient-to-r from-[#0878F9] to-[#11C5E8]" />
                   </div>
-                  <span className="font-mono text-[10px] text-[#5A6D82]">0{index + 1}</span>
+                  <span className="font-mono text-xs text-[#0878F9]">0{index + 1} Structured</span>
                 </div>
               ))}
             </div>
             <p className="mt-5 text-center font-mono text-[9px] uppercase tracking-[0.15em] text-[#5A6D82]">
-              Demo content — not final product functionality
+              Organized Receipt Records · Audit-Ready Access
             </p>
           </div>
         </section>
@@ -1115,30 +1271,40 @@ export function SmartReceiptPage() {
         <section className="bg-[#F5F9FF] py-20 md:py-24 border-y border-[#DCE7F5]">
           <div className="section-shell">
             <SectionTitle
-              title="Key Features"
-              text="Product specifications will be added here as they are confirmed."
+              title="Key Verified Capabilities"
+              text="How SmartReceipt brings order to business and dockside procurement."
             />
             <div className="mt-12 grid gap-6 md:grid-cols-3">
-              {[
-                "Dockside Capture & Digitization",
-                "Inventory Balance Reconciliation",
-                "ERP & Accounting Bridge",
-              ].map((item) => (
-                <div key={item} className="rounded-xl border border-[#DCE7F5] bg-white p-6 shadow-2xs">
-                  <span className="font-mono text-xs font-semibold text-[#0878F9]">TBD</span>
-                  <h4 className="mt-3 text-base font-bold text-[#0B132B]">{item}</h4>
-                  <p className="mt-2 text-xs leading-relaxed text-[#5A6D82]">
-                    Specifications being finalized based on partner feedback.
-                  </p>
-                </div>
-              ))}
+              <div className="rounded-xl border border-[#DCE7F5] bg-white p-6 shadow-2xs">
+                <span className="font-mono text-xs font-semibold text-[#0878F9]">01</span>
+                <h4 className="mt-3 text-base font-bold text-[#0B132B]">Digital Capture & Intake</h4>
+                <p className="mt-2 text-xs leading-relaxed text-[#5A6D82]">
+                  Quick photo or scan intake on tablets and smartphones, eliminating misplaced paper slips.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-[#DCE7F5] bg-white p-6 shadow-2xs">
+                <span className="font-mono text-xs font-semibold text-[#0878F9]">02</span>
+                <h4 className="mt-3 text-base font-bold text-[#0B132B]">Categorization & Tagging</h4>
+                <p className="mt-2 text-xs leading-relaxed text-[#5A6D82]">
+                  Tag receipts by department, project, supplier, or job site for clean organization.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-[#DCE7F5] bg-white p-6 shadow-2xs">
+                <span className="font-mono text-xs font-semibold text-[#0878F9]">03</span>
+                <h4 className="mt-3 text-base font-bold text-[#0B132B]">Instant Search & Export</h4>
+                <p className="mt-2 text-xs leading-relaxed text-[#5A6D82]">
+                  Find any purchase slip by date or vendor name instantly, and export records for accounting.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
         <CtaSection
-          title="Interested in SmartReceipt?"
-          text="Share what you need the product to help with."
+          title="Interested in KodeBlink SmartReceipt?"
+          text="Get in touch to explore how SmartReceipt can organize receipts and supplier documents for your business."
         />
       </main>
     </SiteFrame>
@@ -1152,9 +1318,9 @@ export function PortfolioPage() {
     <SiteFrame>
       <main>
         <PageIntro
-          eyebrow="Portfolio"
-          title="Concepts built around useful work."
-          text="A selection of KODEBLINK concept projects. These are design and product directions, not client work."
+          eyebrow="Products & Work"
+          title="Software Products and Verified Work"
+          text="Explore our software applications and custom systems designed to solve concrete operational problems."
         />
 
         <section className="section-shell py-20 md:py-24">
@@ -1169,17 +1335,17 @@ export function PortfolioPage() {
                     <span className="font-mono text-[10px] uppercase tracking-wider text-[#0878F9] bg-white px-2.5 py-1 border border-[#DCE7F5] rounded-md font-semibold">
                       {category}
                     </span>
-                    <span className="font-mono text-[10px] text-[#5A6D82]">Concept 0{index + 1}</span>
+                    <span className="font-mono text-[10px] text-[#5A6D82]">Solution 0{index + 1}</span>
                   </div>
                   <div>
-                    <span className="font-mono text-xs text-[#0B132B] block font-bold">Architecture System</span>
-                    <span className="font-mono text-[10px] text-[#0878F9]">Connected Manufacturing UI</span>
+                    <span className="font-mono text-xs text-[#0B132B] block font-bold">KODEBLINK Application</span>
+                    <span className="font-mono text-[10px] text-[#0878F9]">Custom Engineered</span>
                   </div>
                 </div>
 
                 <div className="p-7">
                   <p className="font-mono text-xs uppercase tracking-[0.16em] text-[#5A6D82]">
-                    {label} · Concept 0{index + 1}
+                    {label} · 0{index + 1}
                   </p>
                   <h2 className="mt-2 text-xl font-bold text-[#0B132B]">{title}</h2>
                   <p className="mt-3 text-sm leading-relaxed text-[#5A6D82]">{text}</p>
@@ -1222,7 +1388,7 @@ export function PortfolioPage() {
               </button>
 
               <span className="font-mono text-xs uppercase tracking-[0.2em] font-semibold text-[#0878F9]">
-                {portfolio[selectedProject][0]} · Concept 0{selectedProject + 1}
+                {portfolio[selectedProject][0]} · {portfolio[selectedProject][1]}
               </span>
               <h3 className="mt-3 text-2xl font-bold text-[#0B132B]">
                 {portfolio[selectedProject][2]}
@@ -1233,16 +1399,16 @@ export function PortfolioPage() {
 
               <div className="mt-6 rounded-lg border border-[#DCE7F5] bg-[#F5F9FF] p-4 text-xs text-[#5A6D82] space-y-2">
                 <div className="flex justify-between">
-                  <span className="font-mono font-semibold text-[#0B132B]">Target Stack:</span>
-                  <span>React / TypeScript / Tailwind CSS / Node Telemetry</span>
+                  <span className="font-mono font-semibold text-[#0B132B]">Development Scope:</span>
+                  <span>Web App / Mobile Responsive / Custom Business Logic</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="font-mono font-semibold text-[#0B132B]">Deployment:</span>
-                  <span>Industrial Rugged Displays / Cloud Sync</span>
+                  <span className="font-mono font-semibold text-[#0B132B]">Deployment Model:</span>
+                  <span>Cloud Hosted / On-Premise / Tablet Ready</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="font-mono font-semibold text-[#0B132B]">Key Benefit:</span>
-                  <span>Zero-delay operator handoff and audit logging</span>
+                  <span className="font-mono font-semibold text-[#0B132B]">Primary Value:</span>
+                  <span>Eliminates manual delays and connects operational data</span>
                 </div>
               </div>
 
@@ -1266,7 +1432,7 @@ export function PortfolioPage() {
 
         <CtaSection
           title="Have a project in mind?"
-          text="Let's shape the right digital experience for it."
+          text="Let's shape the right digital experience and software architecture for it."
         />
       </main>
     </SiteFrame>
@@ -1288,22 +1454,23 @@ export function ContactPage() {
     <SiteFrame>
       <main>
         <PageIntro
-          eyebrow="Contact"
-          title="Let's Build Something That Matters."
-          text="Tell us what you are trying to build and let's discuss how technology can help."
+          eyebrow="Contact KODEBLINK"
+          title="Let's Build Something That Moves Your Business Forward."
+          text="Tell us what you are trying to build or improve. Whether you need a new website, web app, mobile solution, or custom business software, our team is ready to help."
         />
 
         <section className="section-shell grid gap-16 py-20 md:py-24 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
           <div>
             <SectionTitle
-              title="Start the conversation"
-              text="Share a little about your idea, workflow or business need. We will use it to understand where KODEBLINK can help."
+              eyebrow="Start the Conversation"
+              title="Request a Consultation"
+              text="Share a little about your project, current manual bottlenecks, or software vision. We will review your requirements and provide pragmatic technical feedback."
             />
 
             <div className="mt-10 rounded-xl border border-[#DCE7F5] bg-[#F5F9FF] p-7 space-y-5 text-sm">
               <div>
                 <span className="block font-mono text-[10px] uppercase tracking-wider font-semibold text-[#0878F9]">
-                  Email
+                  Direct Email
                 </span>
                 <a
                   className="focus-ring mt-1 block font-medium text-[#0B132B] hover:text-[#0878F9] transition-colors"
@@ -1315,7 +1482,7 @@ export function ContactPage() {
 
               <div>
                 <span className="block font-mono text-[10px] uppercase tracking-wider font-semibold text-[#0878F9]">
-                  Phone
+                  Telephone
                 </span>
                 <a
                   className="focus-ring mt-1 block font-medium text-[#0B132B] hover:text-[#0878F9] transition-colors"
@@ -1349,6 +1516,15 @@ export function ContactPage() {
                   </a>
                 </div>
               </div>
+            </div>
+
+            <div className="mt-8 rounded-xl border border-[#DCE7F5] bg-white p-6 shadow-2xs">
+              <h4 className="font-mono text-xs uppercase tracking-wider font-semibold text-[#0878F9]">
+                Direct Technical Discussion
+              </h4>
+              <p className="mt-2 text-xs leading-relaxed text-[#5A6D82]">
+                You will speak directly with experienced software engineers and product designers who understand custom business logic, architecture, and realistic project timelines.
+              </p>
             </div>
           </div>
 
@@ -1401,11 +1577,14 @@ export function ContactForm() {
           <Check className="h-6 w-6" />
         </div>
         <h2 className="mt-6 font-display text-2xl font-bold text-[#0B132B]">
-          Thank you!
+          Thank you for reaching out!
         </h2>
         <p className="mt-3 max-w-md text-sm leading-relaxed text-[#5A6D82]">
-          Your project request has been received. Our team will get back to you shortly.
+          Your project inquiry has been received. A senior member of the KODEBLINK engineering team will review your requirements and follow up with you promptly.
         </p>
+        <div className="mt-6 rounded-lg border border-[#DCE7F5] bg-white p-4 text-xs font-mono text-[#5A6D82]">
+          Project Inquiry: <span className="font-semibold text-[#0B132B]">{values.project || "Custom Technology"}</span> · {values.email}
+        </div>
         <Button
           type="button"
           variant="outline"
@@ -1422,7 +1601,7 @@ export function ContactForm() {
             });
           }}
         >
-          Send another request
+          Submit Another Inquiry
         </Button>
       </div>
     );
@@ -1431,6 +1610,7 @@ export function ContactForm() {
   const renderField = (
     name: keyof ContactValues,
     label: string,
+    placeholder: string,
     type = "text",
     required = false
   ) => (
@@ -1443,6 +1623,7 @@ export function ContactForm() {
       </div>
       <input
         type={type}
+        placeholder={placeholder}
         value={values[name]}
         onChange={(event) => update(name, event.target.value)}
         className="focus-ring h-12 rounded-lg border border-[#DCE7F5] bg-white px-4 text-sm text-[#0B132B] placeholder:text-[#5A6D82]/60 transition-colors focus:border-[#0878F9] outline-none"
@@ -1457,24 +1638,41 @@ export function ContactForm() {
       noValidate
       className="grid gap-6 rounded-xl border border-[#DCE7F5] bg-white p-7 md:p-9 shadow-sm"
     >
-      <div className="grid gap-6 sm:grid-cols-2">
-        {renderField("name", "Name", "text", true)}
-        {renderField("company", "Company")}
+      <div className="border-b border-[#EDF3FA] pb-4">
+        <h3 className="text-xl font-bold text-[#0B132B]">Project Inquiry Form</h3>
+        <p className="mt-1 text-xs text-[#5A6D82]">
+          Tell us about your project or business needs. Required fields are marked with an asterisk (*).
+        </p>
       </div>
+
       <div className="grid gap-6 sm:grid-cols-2">
-        {renderField("email", "Email", "email", true)}
-        {renderField("phone", "Phone", "tel")}
+        {renderField("name", "Full Name", "e.g. Alex Morgan", "text", true)}
+        {renderField("company", "Company / Organization", "e.g. Apex Industrial Solutions")}
       </div>
-      {renderField("project", "What do you want to build?", "text", true)}
+
+      <div className="grid gap-6 sm:grid-cols-2">
+        {renderField("email", "Work Email", "e.g. alex@apexindustrial.com", "email", true)}
+        {renderField("phone", "Phone Number", "e.g. +1 (555) 012-3456", "tel")}
+      </div>
+
+      {renderField(
+        "project",
+        "What do you want to build?",
+        "e.g. Website, Mobile App, Custom ERP, Daily Task Tracker",
+        "text",
+        true
+      )}
+
       <label className="grid gap-2 text-sm font-medium text-[#0B132B]">
         <div className="flex justify-between items-center">
           <span>
-            Message <span className="text-[#0878F9]">*</span>
+            Project Overview & Goals <span className="text-[#0878F9]">*</span>
           </span>
           {errors.message && <span className="text-xs text-[#F04438]">{errors.message}</span>}
         </div>
         <textarea
           rows={5}
+          placeholder="Describe what you want to achieve, your timeline, or the operational bottlenecks you are looking to solve..."
           value={values.message}
           onChange={(event) => update("message", event.target.value)}
           className="focus-ring min-h-36 resize-y rounded-lg border border-[#DCE7F5] bg-white px-4 py-3 text-sm text-[#0B132B] placeholder:text-[#5A6D82]/60 transition-colors focus:border-[#0878F9] outline-none"
@@ -1483,7 +1681,7 @@ export function ContactForm() {
       </label>
       <div>
         <Button type="submit" variant="gradient" size="lg" className="w-fit">
-          Send Project Request <ArrowRight className="h-4 w-4" />
+          Send Project Inquiry <ArrowRight className="h-4 w-4" />
         </Button>
       </div>
     </form>

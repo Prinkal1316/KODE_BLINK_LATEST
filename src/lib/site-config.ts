@@ -2,9 +2,9 @@ export const site = {
   name: "KODEBLINK",
   tagline: "CUSTOM DESIGN COMPANY",
   positioning: "CUSTOM DESIGN & TECHNOLOGY COMPANY",
-  specialization: "MANUFACTURING TECHNOLOGY",
+  specialization: "SOFTWARE, WEB & MOBILE SOLUTIONS",
   description:
-    "KODEBLINK designs, develops, and delivers custom digital experiences, websites, web applications, business software, and technology solutions for manufacturing businesses.",
+    "KODEBLINK is a Custom Design & Technology Company that develops websites, web applications, mobile applications, custom business software, and digital solutions built around the way your business works.",
   email: "contact@kodeblink.com",
   phone: "+1 (800) 555-0199",
   phoneHref: "tel:+18005550199",
@@ -16,103 +16,158 @@ export const site = {
     { to: "/services", label: "Services" },
     { to: "/solutions", label: "Solutions" },
     { to: "/smart-receipt", label: "SmartReceipt" },
-    { to: "/portfolio", label: "Portfolio" },
+    { to: "/portfolio", label: "Products & Work" },
     { to: "/contact", label: "Contact" },
   ],
 };
 
+export const products = [
+  {
+    id: "smart-receipt",
+    name: "SmartReceipt",
+    tagline: "Digital Receipt Management Solution",
+    description:
+      "A digital receipt management solution designed to organize, categorize, and access receipt information, purchase records, and supplier documentation without paper clutter.",
+    highlights: [
+      "Digital receipt capture & structured storage",
+      "Categorization by project, department, or vendor",
+      "Instant search, filtering, and retrieval",
+      "Export-ready documentation for bookkeeping",
+    ],
+    status: "Product Direction",
+    to: "/smart-receipt",
+  },
+  {
+    id: "payroll-management",
+    name: "Payroll Management Application",
+    tagline: "Salary & Attendance Workflows",
+    description:
+      "A dedicated business application focused on payroll-related workflows, salary calculations, employee deductions, attendance verification, and payout documentation.",
+    highlights: [
+      "Employee wage & salary structure management",
+      "Automated attendance & leave reconciliation",
+      "Configurable deduction & bonus rules",
+      "Clear monthly salary slip generation",
+    ],
+    status: "Verified Application",
+    to: "/portfolio",
+  },
+  {
+    id: "daily-task-tracker",
+    name: "Daily Task Tracker",
+    tagline: "Operational Task & Work Visibility",
+    description:
+      "An intuitive business application designed to organize daily tasks, monitor their status, prioritize critical work, and provide clear visibility into ongoing operations.",
+    highlights: [
+      "Daily task assignment and priority boards",
+      "Real-time status tracking (To Do, In Progress, Complete)",
+      "Team activity timelines and progress visibility",
+      "Lightweight, distraction-free workflow interface",
+    ],
+    status: "Verified Application",
+    to: "/portfolio",
+  },
+];
+
 export const buildCapabilities = [
   {
     number: "01",
-    title: "Manufacturing Technology",
-    text: "Shop floor telemetry, machine data integration, and operational visibility interfaces built for modern industrial environments.",
+    title: "Website Design & Development",
+    text: "Modern, high-converting corporate websites and landing pages engineered for speed, search visibility, and professional credibility.",
   },
   {
     number: "02",
-    title: "Custom Software Development",
-    text: "Purpose-built web applications and business tooling engineered around your specific operational workflows.",
+    title: "Web Application Development",
+    text: "Custom cloud portals, client dashboards, and interactive web platforms designed with responsive, accessible user interfaces.",
   },
   {
     number: "03",
-    title: "ERP & Inventory Solutions",
-    text: "Tailored production tracking, inventory management, and resource planning systems without off-the-shelf bloat.",
+    title: "Mobile App Development (Android)",
+    text: "Intuitive, performant cross-platform mobile apps with specialized expertise in Android solutions for field and business operations.",
   },
   {
     number: "04",
-    title: "Workflow Automation",
-    text: "Automating repetitive industrial business processes, dispatch handoffs, and digital data pipelines.",
+    title: "Custom Business Software",
+    text: "Purpose-built business tools, ERP, CRM, inventory, and workflow applications engineered around your exact operational rules.",
   },
 ];
 
 export const services: [string, string, string, string, string][] = [
   [
-    "Custom Software Development",
+    "Website Design & Development",
     "What We Deliver",
-    "Tailor-made web applications, internal tools, and specialized business logic platforms built from the ground up for high reliability.",
-    "Our Engineering Approach",
-    "Clean architecture, modern TypeScript frameworks, resilient API boundaries, and clear, maintainable codebases.",
+    "High-performance corporate websites, product landing pages, and digital showcases engineered for speed, search visibility, and client conversion.",
+    "Business Use Cases",
+    "Company launch websites, B2B service showcases, interactive product catalogs, and conversion-focused campaign landing pages.",
   ],
   [
-    "Web Design and Development",
+    "Web Application Development",
     "What We Deliver",
-    "High-impact corporate web platforms and technical product showcases with exceptional typography and responsive layouts.",
-    "Our Engineering Approach",
-    "Component-driven frontend design, sub-second load times, accessible semantic structure, and precision aesthetic direction.",
+    "Custom web portals, client dashboards, cloud platforms, and internal business tools designed with responsive, accessible user interfaces.",
+    "Business Use Cases",
+    "Customer account portals, partner extranets, internal management tools, and browser-based operational software.",
   ],
   [
-    "Manufacturing Technology",
+    "Mobile Application Development (Android)",
     "What We Deliver",
-    "Connected shop floor dashboards, machine monitoring views, operator interfaces, and digital production line tracking.",
-    "Our Engineering Approach",
-    "Telemetry visualization, low-latency UI updates, rugged touch-friendly layouts, and industrial protocol compatibility.",
+    "Intuitive, responsive mobile solutions with specialized expertise in Android-focused applications, tablet interfaces, and cross-platform tools.",
+    "Business Use Cases",
+    "Field worker tools, shop floor mobile scanners, on-site task logging, and executive approval apps.",
   ],
   [
-    "ERP and CRM Solutions",
+    "Custom Business Software",
     "What We Deliver",
-    "Custom enterprise resource planning and client management modules tailored to specialized manufacturing sales and order cycles.",
-    "Our Engineering Approach",
-    "Relational data integrity, unified customer-to-production pipelines, and audit-ready tracking logs.",
+    "Purpose-built software architected around your exact operational rules, custom calculations, and unique business workflows.",
+    "Business Use Cases",
+    "Automating complex pricing logic, proprietary production calculations, custom dispatching, and legacy spreadsheet replacement.",
   ],
   [
-    "Production and Inventory Management",
+    "ERP, CRM & Workflow Applications",
     "What We Deliver",
-    "Real-time material tracking, work-in-progress status, batch verification, and warehouse logistics oversight.",
-    "Our Engineering Approach",
-    "Barcode and QR scanning workflows, inventory balance ledger logic, and automated low-stock dispatch alerts.",
+    "Integrated systems for inventory tracking, customer relationships, order management, production dispatching, and process automation.",
+    "Business Use Cases",
+    "End-to-end order fulfillment, customer lifecycle tracking, warehouse inventory balance, and cross-team approval chains.",
   ],
   [
-    "Business Process Automation",
+    "UI/UX Design & Digital Experiences",
     "What We Deliver",
-    "Automated document processing, invoice generation, cross-department handoffs, and digital compliance checklists.",
-    "Our Engineering Approach",
-    "Event-driven automation sequences, robust error recovery, and seamless synchronization across core business tools.",
+    "User research, wireframing, interactive prototypes, design systems, and modern visual designs crafted for usability.",
+    "Business Use Cases",
+    "Redesigning clunky internal interfaces, designing new digital products from scratch, and user experience audits.",
+  ],
+  [
+    "Existing Application Enhancement & Support",
+    "What We Deliver",
+    "Modernization of legacy systems, feature additions, speed optimization, technical audits, and ongoing software maintenance.",
+    "Business Use Cases",
+    "Refactoring slow codebases, adding modern API connections, upgrading security, and providing reliable bug resolution.",
   ],
 ];
 
 export const solutions: [string, string, string, string][] = [
   [
-    "Digital Shop Floor Operations",
-    "Fragmented paper sheets, disconnected machinery, and delayed shift change reports create operational blind spots.",
-    "Unified operator terminals and real-time station displays that monitor throughput, cycle times, and machine availability.",
-    "Eliminates manual tally sheets, cuts status verification delays, and delivers instant visibility to plant managers.",
+    "Operations & Workflow Management Systems",
+    "Fragmented communication, manual logbooks, and disconnected software create operational blind spots and delayed handoffs.",
+    "Custom operational dashboards and dispatch consoles that track work-in-progress, machine readiness, and team assignments in real time.",
+    "Eliminates manual status follow-ups, shortens turnaround times, and provides management with verified operational visibility.",
   ],
   [
-    "Precision Inventory & Material Tracking",
-    "Discrepancies between physical stock and back-office spreadsheets cause assembly line delays and costly rush orders.",
-    "Custom batch-level inventory tracking with mobile scanning, live lot verification, and consumption analytics.",
-    "Accurate inventory counts across production bays, automated reorder triggers, and reduced scrap waste.",
+    "Inventory & Material Traceability",
+    "Mismatches between physical stock and spreadsheets cause assembly stoppages, over-ordering, and stockout delays.",
+    "Barcode and lot-level inventory tracking software that records raw material intake, bay storage, and consumption on assembly lines.",
+    "Maintains accurate inventory counts, automated low-stock reorder triggers, and complete audit trails for every component.",
   ],
   [
-    "Production Scheduling & Dispatch",
-    "Changing client orders disrupt static production plans, causing idle machine time and overtime labor spikes.",
-    "Dynamic digital dispatch boards that sequence production orders based on machine readiness and tooling setup times.",
-    "Optimized machine utilization, lower lead times, and predictable delivery milestones for key accounts.",
+    "Custom Client & Vendor Portals",
+    "High volume of repetitive emails and phone calls for order status, quotes, documentation, and invoice reconciliation.",
+    "Secure digital web portals where clients and suppliers can view live order status, download documentation, and submit requests.",
+    "Enhances customer satisfaction, reduces administrative overhead, and speeds up approvals and payment cycles.",
   ],
   [
-    "Integrated Enterprise Data Flow",
-    "Critical production data remains trapped on the plant floor while executive and finance teams rely on outdated exports.",
-    "Lightweight, secure API bridges that feed verified operational data directly into business reporting dashboards.",
-    "Executive-level visibility into unit costs, margin health, and true operational throughput in real time.",
+    "Business Process & Data Automation",
+    "Valuable staff spend hours every week re-entering data across separate systems, causing typos and reporting delays.",
+    "Automated data pipelines and software bridges that connect sales inquiries, production orders, and accounting ledgers.",
+    "Eliminates duplicate manual data entry, cuts processing errors to near-zero, and accelerates decision-making.",
   ],
 ];
 
@@ -120,53 +175,100 @@ export const processSteps = [
   {
     number: "01",
     title: "Discover Business Requirements",
-    text: "We study your production workflows, talk to operators and managers, and identify operational bottlenecks.",
+    text: "We study your operational workflows, talk to your key team members, and define exact project goals without technical jargon.",
   },
   {
     number: "02",
-    title: "Plan the Solution",
-    text: "We architect the software structure, data models, integration surfaces, and project milestones with zero ambiguity.",
+    title: "Plan Architecture & Scope",
+    text: "We architect the software structure, data models, technology stack, and clear delivery milestones with transparent estimates.",
   },
   {
     number: "03",
-    title: "Design the Experience",
-    text: "We craft clean, high-contrast, distraction-free interfaces engineered for speed, clarity, and ease of adoption.",
+    title: "Design Intuitive Experiences",
+    text: "We craft clean, high-contrast, distraction-free interfaces that your team and clients can adopt quickly with minimal training.",
   },
   {
     number: "04",
-    title: "Develop and Validate",
-    text: "We write clean, high-performance code with rigorous type safety and test against realistic shop floor scenarios.",
+    title: "Develop & Rigorously Validate",
+    text: "We write clean, high-performance, maintainable code with strict type safety, testing thoroughly against real-world use cases.",
   },
   {
     number: "05",
-    title: "Deploy and Improve",
-    text: "We roll out the system smoothly, assist your team through onboarding, and iterate based on real operational feedback.",
+    title: "Deploy, Onboard & Support",
+    text: "We roll out your solution smoothly, guide your team through onboarding, and provide reliable ongoing technical support.",
   },
 ];
 
 export const portfolio: [string, string, string, string][] = [
   [
-    "Manufacturing Telemetry",
-    "Operational Portal Concept",
-    "Factory Operations & Telemetry Hub",
-    "A centralized command dashboard concept displaying real-time machine throughput, line status, and maintenance schedules across multiple production cells.",
+    "Software Product",
+    "Receipt Management",
+    "SmartReceipt Solution",
+    "A digital receipt management application designed to organize, categorize, and search receipt information, purchase records, and supplier documentation without paper clutter.",
   ],
   [
-    "Supply Chain & Assets",
-    "Inventory Concept",
-    "Industrial Asset & Material Tracker",
-    "A clean material tracking application concept featuring batch lot verification, rack-level location mapping, and automated restock triggers.",
+    "Business Application",
+    "HR & Payroll",
+    "Payroll Management Application",
+    "A specialized business application focused on payroll workflows, employee salary calculations, deductions, attendance verification, and salary slip generation.",
   ],
   [
-    "Workflow & Scheduling",
-    "Dispatch System Concept",
-    "Precision Assembly Dispatch System",
-    "A digital production scheduling interface concept designed to balance work-in-progress orders across robotic and manual fabrication cells.",
+    "Productivity & Operations",
+    "Task Management",
+    "Daily Task Tracker",
+    "An intuitive task tracking application designed to organize daily tasks, monitor their real-time status, prioritize critical work, and provide clear team visibility.",
   ],
   [
-    "Quality Assurance",
-    "Inspection Concept",
-    "Digital Inspection & Compliance Console",
-    "A tablet-first shop floor inspection concept with step-by-step tolerance verification, photo audit trails, and automatic compliance sign-offs.",
+    "Custom Business System",
+    "Operations Portal",
+    "Operations & Telemetry Hub",
+    "A custom operations dashboard concept displaying real-time workflow status, inventory availability, and order progress across multiple business departments.",
   ],
+];
+
+export const faqs = [
+  {
+    question: "What types of software projects does KODEBLINK build?",
+    answer:
+      "We design and develop custom corporate websites, web applications, mobile applications (including Android-focused solutions), custom business software, and operational applications like ERP, CRM, inventory, and task tracking systems.",
+  },
+  {
+    question: "Can you build software tailored to our specific business workflows?",
+    answer:
+      "Yes, that is our primary specialty. Rather than forcing you to adapt to rigid off-the-shelf software, we engineer digital tools that fit your exact processes, business logic, and team routines.",
+  },
+  {
+    question: "Do you build mobile applications as well as web solutions?",
+    answer:
+      "Yes. We develop responsive web applications that work on any browser as well as dedicated mobile applications, including specialized Android solutions for shop floor, warehouse, and field operations.",
+  },
+  {
+    question: "Can you help improve or extend our existing software?",
+    answer:
+      "Absolutely. We frequently help businesses modernize legacy applications, add new capabilities, improve speed and user experience, and provide ongoing software maintenance.",
+  },
+  {
+    question: "How do we start a project with KODEBLINK?",
+    answer:
+      "You can submit a brief message through our contact form describing your project idea or current challenge. We will schedule a direct consultation to discuss technical possibilities and project scope.",
+  },
+];
+
+export const industries = [
+  {
+    title: "Manufacturing & Fabrication",
+    description: "Shop floor telemetry, machine scheduling, batch inventory, and quality inspection consoles.",
+  },
+  {
+    title: "Wholesale & Distribution",
+    description: "Multi-warehouse stock tracking, supplier order validation, and automated logistics handoffs.",
+  },
+  {
+    title: "Professional & Corporate Services",
+    description: "Client portals, workflow automation, custom reporting tools, and secure document management.",
+  },
+  {
+    title: "Contractors & Field Operations",
+    description: "Mobile task tracking, job site dispatching, material logs, and worker status reporting.",
+  },
 ];
