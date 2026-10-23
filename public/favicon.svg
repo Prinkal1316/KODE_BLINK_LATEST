@@ -1,0 +1,35 @@
+<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Clean rounded icon container -->
+  <rect width="40" height="40" rx="10" fill="#FFFFFF"/>
+  <rect x="0.75" y="0.75" width="38.5" height="38.5" rx="9.25" stroke="#DCE7F5" stroke-width="1.5"/>
+  
+  <!-- Multicolor KODEBLINK 'K' Mark -->
+  <!-- Vertical Stem with Blue to Cyan Gradient -->
+  <defs>
+    <linearGradient id="fav-blue-cyan" x1="8" y1="8" x2="8" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0878F9"/>
+      <stop offset="100%" stop-color="#11C5E8"/>
+    </linearGradient>
+    <linearGradient id="fav-yellow-red" x1="16" y1="8" x2="31" y2="20" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFC928"/>
+      <stop offset="100%" stop-color="#F04438"/>
+    </linearGradient>
+    <linearGradient id="fav-turq-green" x1="16" y1="20" x2="31" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#12DCC0"/>
+      <stop offset="100%" stop-color="#20B85A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left Stem Column -->
+  <rect x="8.5" y="8" width="5.5" height="24" rx="2.5" fill="url(#fav-blue-cyan)"/>
+  
+  <!-- Upper Diagonal Wing (Yellow to Red) -->
+  <path d="M16 19.5L26.5 9.5C27.5 8.5 29.5 9.2 29.5 10.7V11.2C29.5 12.1 29 13 28.2 13.6L19 21.5L16 19.5Z" fill="url(#fav-yellow-red)"/>
+  
+  <!-- Lower Diagonal Wing (Turquoise to Green) -->
+  <path d="M16 20.5L28.2 31.4C29 32 29.5 32.9 29.5 33.8V34.3C29.5 35.8 27.5 36.5 26.5 35.5L16 25.5V20.5Z" fill="url(#fav-turq-green)"/>
+  
+  <!-- Central Technology Node / Aperture Blink -->
+  <circle cx="16.5" cy="20" r="2.5" fill="#0878F9"/>
+  <circle cx="16.5" cy="20" r="1.2" fill="#FFFFFF"/>
+</svg>
