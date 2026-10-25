@@ -55,9 +55,15 @@ export function Logo({ compact = false }: { compact?: boolean }) {
     <Link
       to="/"
       aria-label="KODEBLINK home"
-      className="focus-ring group flex min-w-0 items-center gap-3 select-none"
+      className="inline-flex min-w-0 items-center gap-3"
     >
-      <KodeblinkMark className={compact ? "h-9 w-9" : "h-10 w-10"} />
+      <img
+        src="/logo_KodeBlink.jpeg"
+        alt="KODEBLINK - Custom Design Company"
+        className={`shrink-0 object-contain ${
+          compact ? "h-9 w-9" : "h-12 w-12"
+        }`}
+      />
       {!compact && (
         <span className="min-w-0 flex flex-col justify-center">
           <span className="block truncate font-display text-lg font-bold tracking-tight text-[#0B132B] transition-colors group-hover:text-[#0878F9]">

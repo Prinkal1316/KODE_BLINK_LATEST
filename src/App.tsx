@@ -4,6 +4,7 @@
  */
 
 import { RouterProvider, useRouter } from "@/components/router";
+import FloatingContact from "./components/FloatingContact";
 import {
   HomePage,
   AboutPage,
@@ -43,6 +44,7 @@ export default function App() {
   return (
     <RouterProvider>
       <RouteRenderer />
+      <FloatingContact />
     </RouterProvider>
   );
 }
