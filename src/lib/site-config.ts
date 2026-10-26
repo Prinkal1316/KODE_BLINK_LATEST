@@ -1,4 +1,7 @@
 import { MessageSquare, Compass, Layout, Code2, Rocket, Network, Palette, Workflow } from "lucide-react";
+import smartReceiptImage from "../assets/images/smartreceipt-new-bill.png";
+import payrollImage from "../assets/images/Payroll_Management.png";
+import dailyTaskImage from "../assets/images/Daily_Task.png";
 
 export const site = {
   name: "KODEBLINK",
@@ -219,21 +222,21 @@ export const portfolio: [string, string, string, string, string][] = [
     "Receipt Management",
     "SmartReceipt Solution",
     "A digital receipt management application to organize, categorize, and search receipts and supplier records.",
-    "src/assets/images/smartreceipt-new-bill.png",
+    smartReceiptImage,
   ],
   [
     "Business Application",
     "HR & Payroll",
     "Payroll Management Application",
     "Manage salary calculations, attendance, deductions, and salary slips in one application.",
-    "src/assets/images/Payroll_Management.png",
+    payrollImage,
   ],
   [
     "Productivity & Operations",
     "Task Management",
     "Daily Task Tracker",
     "Organize daily tasks, prioritize work, and track team progress with clear status visibility.",
-    "src/assets/images/Daily_Task.png",
+    dailyTaskImage,
   ],
 ];
 

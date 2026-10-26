@@ -54,6 +54,9 @@ import { ArrowUpRight, FileText, LayoutDashboard, ReceiptText, Users, Wallet } f
 import { Button } from "@/components/ui/button";
 import { Link, useRouter } from "@/components/router";
 import { Logo } from "@/components/logo";
+import smartReceiptDashboard from "../assets/images/smartreceipt-dashboard.png";
+import smartReceiptBills from "../assets/images/smartreceipt-bills.png";
+import smartReceiptNewBill from "../assets/images/smartreceipt-new-bill.png";
 import {
   buildCapabilities,
   portfolio,
@@ -855,7 +858,7 @@ export function HeroVisual() {
         </div>
 
         <img
-          src="/src/assets/images/smartreceipt-dashboard.png"
+          src={smartReceiptDashboard}
           alt="SmartReceipt dashboard showing sales, billing and business overview"
           className="block h-auto w-full"
           loading="eager"
@@ -889,7 +892,7 @@ export function HeroVisual() {
         </div>
 
         <img
-          src="/src/assets/images/smartreceipt-bills.png"
+          src={smartReceiptBills}
           alt="SmartReceipt bills list showing payment methods, amounts and statuses"
           className="block h-auto w-full rounded-lg border border-[#E5EDF7]"
           loading="eager"
@@ -916,7 +919,7 @@ export function HeroVisual() {
         </div>
 
         <img
-          src="/src/assets/images/smartreceipt-new-bill.png"
+          src={smartReceiptNewBill}
           alt="SmartReceipt billing screen showing menu items and current bill"
           className="block h-auto w-full rounded-lg border border-[#E5EDF7]"
           loading="eager"
